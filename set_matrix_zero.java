@@ -30,7 +30,57 @@ public class set_matrix_zero{
     //     }
 
     // }
-    public void set_matrix(int[][] matrix){}
+    public void set_matrix(int[][] matrix){
+        int row = matrix.length;
+        int col = matrix[0].length;
+        Boolean row_flag =false;
+        Boolean col_flag = false;
+        for( int i=0;i<col;i++){
+            if(matrix[0][i] == 0){
+                    row_flag = true;
+                    break;
+            }
+        }
+        for( int i=0;i<row;i++){
+            if(matrix[i][0] == 0){
+                    col_flag = true;
+                    break;
+            }
+        }
+        for( int i =1;i< row ; i++){
+            for(int j = 1;j< col;j++){
+                if(matrix[i][j] == 0){
+                    matrix[j][0] =0;
+                    matrix[0][i]=0;
+                }
+            }
+        }
+        for( int i =1;i< row;i++){
+            if( matrix[i][0] == 0){
+                for(int j =1;j< col ;j++){
+                    matrix[i][j] =0;
+                }
+            }
+        }
+        for( int i =1;i< col;i++){
+            if( matrix[0][i] == 0){
+                for(int j =1;j< row ;j++){
+                    matrix[i][j] =0;
+                }
+            }
+        }
+        if(row_flag){
+            for(int i =0 ; i< col ;i++){
+                matrix[0][i] =0;
+            }
+        }
+        if(col_flag){
+            for(int i =0 ; i< row ;i++){
+                matrix[i][0] =0;
+            }
+        }
+
+    }
     
     public static void main(String[] args){
         System.out.println("This program is to slove set_matrix_zero problem");
