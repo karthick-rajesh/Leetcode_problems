@@ -13,8 +13,8 @@ public class subarrays_sums {
             }
             if(map.containsKey(prefix_sum)){
                 map.put(prefix_sum,(map.get(prefix_sum)+1));
-            }
-            map.put(prefix_sum,1);
+            }else{
+            map.put(prefix_sum,1);}
         }
         //  int n = nums.length;
         //  int i=0;
@@ -43,8 +43,8 @@ public class subarrays_sums {
     }
     public static void main(String[] args){
         subarrays_sums obj = new subarrays_sums();
-        int[] nums = {1,1,1};
-        int count = obj.subarry(nums, 2);
+        int[] nums = {1,-1,0};
+        int count = obj.subarry(nums, 0);
         System.out.println(count);
     }
 }
